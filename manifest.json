@@ -13,7 +13,7 @@
       "type": "keyword",
       "name": "Battery-Status",
       "description": "Shows battery status",
-      "default_value": "dm"
+      "default_value": "batt"
     }
   ]
 }
