@@ -9,7 +9,7 @@
   },
   "preferences": [
     {
-      "id": "demo_kw",
+      "id": "battery",
       "type": "keyword",
       "name": "Battery-Status",
       "description": "Shows battery status",
