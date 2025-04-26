@@ -1,0 +1,19 @@
+{
+  "required_api_version": "2",
+  "name": "Batery-Status",
+  "description": "Shows battery status of devices connected",
+  "developer_name": "Ural Kemal",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "demo_kw",
+      "type": "keyword",
+      "name": "Battery-Status",
+      "description": "Shows battery status",
+      "default_value": "dm"
+    }
+  ]
+}
