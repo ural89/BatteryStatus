@@ -5,6 +5,7 @@ from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 import subprocess
+import re
 
 
 def run_upower_command(args):
@@ -47,13 +48,22 @@ class KeywordQueryEventListener(EventListener):
         devices = get_upower_devices()
 
         for device in devices:
-            model, percentage = get_device_info(device)
-            if model and percentage:
-                items.append(
+            model, percentage_str = get_device_info(device)
+            if model and percentage_str:
+                digits = ''.join(c for c in percentage_str if c.isdigit())
+                if digits:
+                    percentage = int(digits)
+                    if percentage >= 70:
+                        icon = 'images/battfull.png'
+                    elif percentage >= 20:
+                        icon = 'images/batthalf.png'
+                    else:
+                        icon = 'images/battlow.png'
+                    items.append(
                     ExtensionResultItem(
-                        icon='images/icon.png',
+                        icon= icon,
                         name=model,
-                        description=percentage,
+                        description=f"{percentage}%",
                         on_enter=HideWindowAction()
                     )
                 )

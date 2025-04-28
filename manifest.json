@@ -3,7 +3,7 @@
   "name": "Batery-Status",
   "description": "Shows battery status of devices connected",
   "developer_name": "Ural Kemal",
-  "icon": "images/icon.png",
+  "icon": "images/battfull.png",
   "options": {
     "query_debounce": 0.1
   },
